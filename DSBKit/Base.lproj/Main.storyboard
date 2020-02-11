@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ATResearchKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDR-XE-gfj">
+                                <rect key="frame" x="178" y="82" width="58" height="30"/>
+                                <state key="normal" title="Consent"/>
+                                <connections>
+                                    <action selector="getConsent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sZe-xV-RN5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKj-Pl-0HV">
+                                <rect key="frame" x="164.66666666666666" y="128" width="85" height="30"/>
+                                <state key="normal" title="Start Survey"/>
+                                <connections>
+                                    <action selector="startSurvey:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FYd-Pg-Xvw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCT-pi-Nky">
+                                <rect key="frame" x="168" y="174" width="78" height="30"/>
+                                <state key="normal" title="Active Task"/>
+                                <connections>
+                                    <action selector="startActiveTask:" destination="BYZ-38-t0r" eventType="touchUpInside" id="anB-Hm-4Xv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="UCT-pi-Nky" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Dcx-Ho-hWo"/>
+                            <constraint firstItem="hDR-XE-gfj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="N26-6B-vhj"/>
+                            <constraint firstItem="hDR-XE-gfj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="82" id="Q9K-EL-aiZ"/>
+                            <constraint firstItem="eKj-Pl-0HV" firstAttribute="top" secondItem="hDR-XE-gfj" secondAttribute="bottom" constant="16" id="YAG-6v-mxl"/>
+                            <constraint firstItem="eKj-Pl-0HV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pjc-LI-z9F"/>
+                            <constraint firstItem="UCT-pi-Nky" firstAttribute="top" secondItem="eKj-Pl-0HV" secondAttribute="bottom" constant="16" id="wce-H5-VDw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="146" y="114"/>
+        </scene>
+    </scenes>
+</document>
