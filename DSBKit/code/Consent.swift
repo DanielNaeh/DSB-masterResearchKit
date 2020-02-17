@@ -134,15 +134,21 @@ func createTrialSpecificFields(trialId: Int32) -> [ORKStep]{
             }
             else if patientDetailTypeMap.DetailType == 4
             {
-                let defaultDate = Date().addingTimeInterval(1000000)
-    
-               let minDate = Date().addingTimeInterval(1000000)
-               let maxDate =  Calendar.current.date(byAdding: .year, value: -18, to: defaultDate)
-               let nameQuestionStepTitle = NSLocalizedString(patientDetailTypeMap.Name, comment: "")
-               let dateAnswer = ORKDateAnswerFormat(style:ORKDateAnswerStyle.date, defaultDate: defaultDate, minimumDate: minDate, maximumDate: maxDate, calendar: nil)
-               let questionStep1 = ORKQuestionStep(identifier: "ExtF" + String(patientDetailTypeMap.PatientDetailTypeId), title:nameQuestionStepTitle, answer: dateAnswer)
-               stp.append(questionStep1)
-               questionStep1.isOptional = false;
+                var defaultDate = Date()
+
+                let calendar = Calendar(identifier: .gregorian)
+
+                
+                var components = DateComponents()
+
+                let  minDate  = Calendar.current.date(byAdding: .year, value: -100, to: Date())
+                let maxDate = Calendar.current.date(byAdding: .year, value: -18, to: defaultDate)
+
+                let nameQuestionStepTitle = NSLocalizedString(patientDetailTypeMap.Name, comment: "")
+                let dateAnswer = ORKDateAnswerFormat(style:ORKDateAnswerStyle.date, defaultDate: nil, minimumDate: minDate, maximumDate: maxDate , calendar: nil)
+                let questionStep1 = ORKQuestionStep(identifier: "ExtF" + String(patientDetailTypeMap.PatientDetailTypeId), title:nameQuestionStepTitle, answer: dateAnswer)
+                stp.append(questionStep1)
+                questionStep1.isOptional = false;
             }
             
             else if patientDetailTypeMap.DetailType == 6
@@ -244,7 +250,7 @@ func createConsentSectionsInfoSheet (trialId: Int32) -> [ORKConsentSection]
 //                ORKsection.contentURL =  Bundle.main.url(forResource: "consentitems", withExtension: "html")//
               
                 ORKsection.title = sectionResoucre.Description
-                //ORKsection.summary = sectionResoucre.Text
+                ORKsection.summary = sectionResoucre.Text
                 ORKsection.content = sectionResoucre.Text
                 
             }

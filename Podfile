@@ -6,6 +6,6 @@ target 'DSBKit' do
   use_frameworks!
 
   pod 'SwiftyJSON'
-  pod 'Alamofire'
+  pod 'Alamofire' , '~> 4.0'
   pod 'RealmSwift'
 end
